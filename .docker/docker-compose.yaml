@@ -3,10 +3,10 @@ services:
   backend:
     build: 
       context: api
-    ports: 4000:4000
+    ports: 
+      - 4000:4000
   frontend:
     build:
       context: app
-    ports: 3000:3000
-      
-
+    ports: 
+      - 3000:3000
