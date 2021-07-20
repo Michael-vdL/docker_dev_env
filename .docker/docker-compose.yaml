@@ -1,12 +1,8 @@
 version: "3.7"
 services:
   backend:
-    build: 
-      context: api
-      target: development
+    build: api
   frontend:
-    build:
-      context: app
-      target: development
-      
+    build: app
+
 
