@@ -4,10 +4,12 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 COPY yarn.lock ./
 
-RUN yarn install
+RUN yarn
 
-EXPOSE 4000
+EXPOSE 3000
 
 COPY . .
 
-CMD ["yarn", "dev"]
+RUN node node_modules/esbuild/install.js
+
+CMD ["yarn", "dev", "--host"]

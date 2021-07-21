@@ -8,5 +8,16 @@ services:
   frontend:
     build:
       context: app
+    privileged: true
     ports: 
       - 3000:3000
+  database:
+    image: dgraph/standalone:v21.03.1
+    volumes: 
+      - db-data:/dgraph
+    ports:
+      - 8080:8080
+      - 9080:9080
+      - 8000:8000
+volumes:
+  db-data:
